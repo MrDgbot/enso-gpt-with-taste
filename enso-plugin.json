@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mrdgbot.gpttaste",
+  "name": "GPT with Taste",
+  "version": "0.1.0",
+  "description": "把 NB-Corp/gpt-with-taste 的行为配方做成 EnsoCode 预设：少确认、少防御性措辞、把子代理结果消化成行动。主会话追加 Main 与 Steer，子代理可选 taste:sub / taste:independent。每天自动同步上游。",
+  "permissions": [],
+  "contributes": {
+    "presets": [
+      {
+        "id": "taste",
+        "name": "GPT with Taste",
+        "skills": [],
+        "mcpServers": [],
+        "agentTypes": [
+          "taste:sub",
+          "taste:independent"
+        ],
+        "systemPromptTail": "prompts/main.md"
+      }
+    ],
+    "agentTypes": [
+      {
+        "name": "taste:sub",
+        "description": "Delegated agent working from the main session's brief under GPT with Taste: owns its assigned slice, makes ordinary decisions itself, and returns results the parent can act on directly.",
+        "systemPrompt": "prompts/sub.md",
+        "tools": "all",
+        "modelMode": "agent_pick"
+      },
+      {
+        "name": "taste:independent",
+        "description": "Independent agent under GPT with Taste for self-contained work or a second opinion; no parent steering.",
+        "systemPrompt": "prompts/independent.md",
+        "tools": "all",
+        "modelMode": "agent_pick"
+      }
+    ]
+  }
+}
