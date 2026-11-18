@@ -3,6 +3,7 @@
   "id": "mrdgbot.gpttaste",
   "name": "GPT with Taste",
   "version": "0.1.0",
+  "icon": "icon.svg",
   "description": "把 NB-Corp/gpt-with-taste 的行为配方做成 EnsoCode 预设：少确认、少防御性措辞、把子代理结果消化成行动。主会话追加 Main 与 Steer，子代理可选 taste:sub / taste:independent。每天自动同步上游。",
   "permissions": [],
   "contributes": {

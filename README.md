@@ -6,13 +6,15 @@
 
 ## 安装
 
-打开 设置 → 插件 → Enso plugins，在安装栏粘贴：
+在 EnsoCode 的插件市场搜索「GPT with Taste」安装。
+
+也可以打开 设置 → 插件 → Enso plugins，在安装栏粘贴：
 
 ```
 https://github.com/MrDgbot/enso-gpt-with-taste
 ```
 
-或者克隆仓库后选「从文件夹安装」，选仓库根目录。这个插件没有进市场，用链接或目录安装即可。
+或者克隆仓库后选「从文件夹安装」，选仓库根目录。
 
 新装的插件默认停用，要在设置页把它启用。启用后，预设列表里会出现只读预设「GPT with Taste」。
 
@@ -55,6 +57,8 @@ python3 scripts/add-preset.py --mcp semble --mcp fast-context-mcp --role-from PP
 `.github/workflows/sync-upstream.yml` 每天运行一次，也可以在 Actions 页面手动触发。它会拉取上游 `master` 并重新生成 `prompts/`；如果有变化，就把补丁版本号加一，然后提交。
 
 用 GitHub 链接安装并启用的用户，EnsoCode 会在启动约 1 分钟后检查一次更新，之后每天一次，比较的是仓库里 `enso-plugin.json` 的 `version`。有新版本时，设置页的插件行会提示，点「更新」确认即可，不会自动安装。用 zip 或目录安装的不会自动检查，需要重新安装。
+
+市场版固定在 [J3n5en/enso-plugins](https://github.com/J3n5en/enso-plugins) 的 `registry/external/mrdgbot.gpttaste.json` 记录的 commit 上。上游同步之后，要提 PR 把这个 commit 改成新的 sha，合并发布后，市场用户才会收到新版。
 
 改插件时，从目录安装后在插件详情里打开「开发模式」，文件改动后会自动重装。
 
